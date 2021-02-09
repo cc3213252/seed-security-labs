@@ -1,3 +1,7 @@
+## 资料
+
+https://seedsecuritylabs.org/Labs_20.04/Files/Environment_Variable_and_SetUID/Environment_Variable_and_SetUID.pdf
+
 ## task1 打印环境变量
 
 ```bash
@@ -28,12 +32,12 @@ diff file1 file2
 ## task3 环境变量在execve使用
 
 ```bash
-gcc myenv.c
+gcc -o myenv myenv.c
 ./myenv
 ```
 修改代码之后再编译执行  
-输出到文件后发现不一样
-不太理解实验作用  
+NULL时没有输出任何环境变量，说明没有传递环境变量  
+environ时传递了系统的环境变量    
 
 ## task4 环境变量在system使用
 
@@ -81,7 +85,8 @@ gcc -o myprog myprog.c
 
 ## task8 用system和execve调用外部程序  
 
-由于实验7把系统动态链接库破坏了，导致这个程序编译错误，需要恢复系统重新做这个实验  
+由于实验7把系统动态链接库破坏了，导致这个程序编译错误    
+只需重启shell即可  
 
 ## task9 能力泄露，由于未关闭文件句柄导致的泄露
 
